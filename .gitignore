@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+target/
+dist/
+.mvn/wrapper/maven-wrapper.jar
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Runtime uploads
+uploads/
+backend-springboot/uploads/
+
+# IDE & OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+*.class
+*.jar
+!backend-springboot/.mvn/wrapper/maven-wrapper.jar
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+models/
+
+# Assessment tooling (optional)
+.github/modernize/

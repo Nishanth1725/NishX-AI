@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-void text-slate-100 overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-glass;
+  }
+
+  .glass-hover {
+    @apply glass transition-all duration-300 hover:border-neon-cyan/40 hover:shadow-glow;
+  }
+
+  .glow-btn {
+    @apply relative overflow-hidden rounded-xl px-6 py-3 font-semibold text-white
+      bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple
+      shadow-glow transition-all duration-300
+      hover:scale-[1.02] hover:shadow-glow-purple active:scale-[0.98];
+  }
+
+  .glow-btn-outline {
+    @apply rounded-xl px-6 py-3 font-semibold border border-neon-cyan/50 text-neon-cyan
+      bg-neon-cyan/5 transition-all duration-300
+      hover:bg-neon-cyan/15 hover:shadow-glow hover:border-neon-cyan;
+  }
+
+  .neon-text {
+    @apply bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple bg-clip-text text-transparent;
+  }
+
+  .input-futuristic {
+    @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3
+      text-white placeholder-slate-500 outline-none transition-all
+      focus:border-neon-cyan/50 focus:ring-2 focus:ring-neon-cyan/20;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-xl px-4 py-3 text-slate-400
+      transition-all duration-200 hover:bg-white/5 hover:text-white;
+  }
+
+  .sidebar-link-active {
+    @apply bg-gradient-to-r from-neon-cyan/15 to-neon-purple/10 text-white
+      border border-neon-cyan/30 shadow-glow;
+  }
+
+  .chat-markdown {
+    @apply text-sm leading-relaxed;
+  }
+
+  .chat-markdown > *:first-child {
+    @apply mt-0;
+  }
+
+  .chat-markdown > *:last-child {
+    @apply mb-0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.4);
+}
