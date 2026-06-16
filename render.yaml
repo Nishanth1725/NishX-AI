@@ -86,4 +86,4 @@ services:
     plan: free
     envVars:
       - key: VITE_API_URL
-        sync: false give fully corrected code don't change fronted to frontend cause it's ok file name 
+        sync: false 
