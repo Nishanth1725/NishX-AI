@@ -6,7 +6,6 @@ databases:
   - name: nexusai-db
     plan: free
     databaseName: ai_analytics
-    user: postgres
 
 services:
   - type: web
@@ -25,10 +24,6 @@ services:
         value: /app/uploads
       - key: MODEL_PATH
         value: /app/models
-    disk:
-      name: python-uploads
-      mountPath: /app/uploads
-      sizeGB: 1
 
   - type: web
     name: nexusai-backend
@@ -73,10 +68,6 @@ services:
         fromDatabase:
           name: nexusai-db
           property: password
-    disk:
-      name: backend-uploads
-      mountPath: /app/uploads
-      sizeGB: 1
 
   - type: web
     name: nexusai-frontend
