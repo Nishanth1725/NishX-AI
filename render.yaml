@@ -2,6 +2,12 @@
 # Deploy: connect repo → Render detects this file → set sync:false vars manually
 # Docs: https://render.com/docs/blueprint-spec
 
+databases:
+  - name: nexusai-db
+    plan: free
+    databaseName: ai_analytics
+    user: postgres
+
 services:
   - type: web
     name: nexusai-python-engine
@@ -19,8 +25,6 @@ services:
         value: /app/uploads
       - key: MODEL_PATH
         value: /app/models
-      - key: DATABASE_URL
-        sync: false
     disk:
       name: python-uploads
       mountPath: /app/uploads
@@ -62,9 +66,13 @@ services:
       - key: DB_URL
         sync: false
       - key: DB_USERNAME
-        sync: false
+        fromDatabase:
+          name: nexusai-db
+          property: user
       - key: DB_PASSWORD
-        sync: false
+        fromDatabase:
+          name: nexusai-db
+          property: password
     disk:
       name: backend-uploads
       mountPath: /app/uploads
@@ -78,4 +86,4 @@ services:
     plan: free
     envVars:
       - key: VITE_API_URL
-        sync: false
+        sync: false give fully corrected code don't change fronted to frontend cause it's ok file name 
