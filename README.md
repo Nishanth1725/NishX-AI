@@ -1,4 +1,4 @@
-# NexusAI — Big Data Predictive Analytics Platform
+# NishX AI — Big Data Predictive Analytics Platform
 
 A full-stack AI analytics platform with a **futuristic dark UI**, Spring Boot backend, Python ML engine (PySpark), and AI assistant chat.
 
