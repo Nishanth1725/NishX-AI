@@ -63,7 +63,7 @@ services:
         sync: false
 
   - type: web
-    name: nexusai-frontend
+    name: nexus-ai-frontend
     runtime: static
     buildCommand: npm run build
     staticPublishPath: dist  # Render uses 'staticPublishPath' instead of 'publishDir'
