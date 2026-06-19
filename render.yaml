@@ -61,9 +61,9 @@ services:
       - key: DB_PASSWORD
         sync: false
 
-  - type: web
-    name: nexusai-frontend
-    runtime: static
+statics:
+  - name: nexusai-frontend
+    repo: https://github.com/Nishanth1725/NishX-AI # Explicitly matches the root repo context
     buildCommand: npm run build
     publishDir: dist
     envVars:
