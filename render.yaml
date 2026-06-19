@@ -1,5 +1,4 @@
 # NexusAI — Render Blueprint
-# Deploy: connect repo → Render detects this file → set sync:false vars manually
 # Docs: https://render.com/docs/blueprint-spec
 
 services:
@@ -42,7 +41,7 @@ services:
         fromService:
           name: nexusai-python-engine
           type: web
-          property: hostport
+          property: url
       - key: AI_PROVIDER_URL
         value: https://openrouter.ai/api/v1/chat/completions
       - key: AI_PROVIDER_MODEL
@@ -64,10 +63,9 @@ services:
 
   - type: web
     name: nexusai-frontend
-    runtime: docker
-    dockerfilePath: ./fronted-react/Dockerfile
-    dockerContext: ./fronted-react
-    plan: free
+    runtime: static
+    buildCommand: npm run build
+    publishDir: dist
     envVars:
       - key: VITE_API_URL
         sync: false
