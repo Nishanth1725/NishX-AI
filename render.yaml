@@ -83,8 +83,8 @@ services:
   - type: web
     name: nexusai-frontend
     runtime: docker
-    dockerfilePath: ./frontnd-react/Dockerfile
-    dockerContext: ./frontnd-react
+    dockerfilePath: ./fronted-react/Dockerfile
+    dockerContext: ./fronted-react
     plan: free
 
     envVars:
