@@ -63,10 +63,11 @@ services:
         sync: false
 
   - type: web
-    name: nexus-ai-frontend
-    runtime: static
-    buildCommand: npm run build
-    staticPublishPath: dist  # Render uses 'staticPublishPath' instead of 'publishDir'
+    name: nexusai-frontend
+    runtime: docker
+    dockerfilePath: ./fronted-react/Dockerfile
+    dockerContext: ./fronted-react
+    plan: free
     envVars:
       - key: VITE_API_URL
         sync: false
