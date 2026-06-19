@@ -61,8 +61,8 @@ services:
       - key: DB_PASSWORD
         sync: false
 
-  - type: static
-    name: nexusai-frontend
+statics:
+  - name: nexusai-frontend
     buildCommand: npm run build
     publishDir: dist
     envVars:
