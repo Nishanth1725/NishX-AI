@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: nexusai-python-engine
+    name: NishXai-python-engine
     runtime: docker
     dockerfilePath: ./ai-engine-python/Dockerfile
     dockerContext: ./ai-engine-python
@@ -27,7 +27,7 @@ services:
         sync: false
 
   - type: web
-    name: nexusai-backend
+    name: NishXai-backend
     runtime: docker
     dockerfilePath: ./backend-springboot/Dockerfile
     dockerContext: ./backend-springboot
@@ -81,7 +81,7 @@ services:
         sync: false
 
   - type: web
-    name: nexusai-frontend
+    name: NishXai-frontend
     runtime: docker
     dockerfilePath: ./fronted-react/Dockerfile
     dockerContext: ./fronted-react
