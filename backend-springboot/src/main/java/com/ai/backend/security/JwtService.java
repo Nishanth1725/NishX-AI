@@ -49,4 +49,4 @@ public class JwtService {
         return Long.parseLong(parseClaims(token).getSubject());
     }
 }
- 
+
