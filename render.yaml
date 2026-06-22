@@ -49,7 +49,7 @@ services:
 
       - key: PYTHON_ENGINE_URL
         fromService:
-          name: nexusai-python-engine
+          name: NishXai-python-engine
           type: web
           property: hostport
 
