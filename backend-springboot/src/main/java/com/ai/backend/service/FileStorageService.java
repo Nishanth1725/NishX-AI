@@ -45,4 +45,19 @@ public class FileStorageService {
     public Path resolve(String storagePath) {
         return Paths.get(storagePath).normalize();
     }
+
+    public byte[] read(String storagePath) {
+        if (storagePath == null || storagePath.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Storage path is required");
+        }
+        Path path = resolve(storagePath);
+        if (!Files.exists(path)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Dataset file not found: " + path);
+        }
+        try {
+            return Files.readAllBytes(path);
+        } catch (IOException ex) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to read dataset file");
+        }
+    }
 }
